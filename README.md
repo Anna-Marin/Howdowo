@@ -21,3 +21,4 @@ How does it work? A utility to guide when using home appliances
 3. AI Image Identification
 # Additional Features
 1- Recommendation products secction (For old or broken user machines) (Companies can partner us to recommend their products on this place)
+2- Second Hand Market secction inside the app
