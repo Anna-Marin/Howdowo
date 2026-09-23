@@ -18,5 +18,6 @@ How does it work? A utility to guide when using home appliances
 # Tecnologies
 1. Android Studio (Using Kotlin)
 2. LangChain for the AI agent, 3 step
+3. AI Image Identification
 # Additional Features
 1- Recommendation products secction (For old or broken user machines) (Companies can partner us to recommend their products on this place)
