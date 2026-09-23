@@ -14,4 +14,9 @@ How does it work? A utility to guide when using home appliances
 	1. Parts replacement 
 	2. New device recommendations (based on enterprise partners)
 7. Off-peak electricity tariff optimization
-8. Acoustic thing 
+8. Acoustic thing
+# Tecnologies
+1. Android Studio (Using Kotlin)
+   
+# Additional Features
+1- Recommendation products secction (For old or broken user machines) (Companies can partner us to recommend their products on this place)
