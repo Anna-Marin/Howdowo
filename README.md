@@ -19,6 +19,7 @@ How does it work? A utility to guide when using home appliances
 1. Android Studio (Using Kotlin)
 2. LangChain for the AI agent, 3 step
 3. AI Image Identification
+4. Digital Twin of the user's home
 # Additional Features
 1- Recommendation products secction (For old or broken user machines) (Companies can partner us to recommend their products on this place)
 2- Second Hand Market secction inside the app
