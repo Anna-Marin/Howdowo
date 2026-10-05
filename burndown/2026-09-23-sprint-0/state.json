@@ -1,0 +1,86 @@
+{
+ "PVTI_lAHOAjkDXc4BkdSgzg9uRPI": {
+  "c": 0.0,
+  "done": true,
+  "issue": 33,
+  "title": "Create a DB Diagram"
+ },
+ "PVTI_lAHOAjkDXc4BkdSgzg-kc-U": {
+  "c": 0.0,
+  "done": true,
+  "issue": 35,
+  "title": "Create base project on Android Studio"
+ },
+ "PVTI_lAHOAjkDXc4BkdSgzg9uIm0": {
+  "c": 0.0,
+  "done": true,
+  "issue": 26,
+  "title": "Point 7 of the document"
+ },
+ "PVTI_lAHOAjkDXc4BkdSgzg9uNDE": {
+  "c": 6.0,
+  "done": false,
+  "issue": 31,
+  "title": "Search technologies to use"
+ },
+ "PVTI_lAHOAjkDXc4BkdSgzg9u3Hg": {
+  "c": 5.0,
+  "done": false,
+  "issue": 34,
+  "title": "Create a presentation"
+ },
+ "PVTI_lAHOAjkDXc4BkdSgzg9tji4": {
+  "c": 8.0,
+  "done": false,
+  "issue": 9,
+  "title": "Create Project Documentation - Sprint 0"
+ },
+ "PVTI_lAHOAjkDXc4BkdSgzg8Y1Ew": {
+  "c": 0.0,
+  "done": true,
+  "issue": 2,
+  "title": "Create a Burndown Burnup and velocity Chart "
+ },
+ "PVTI_lAHOAjkDXc4BkdSgzg8YdZg": {
+  "c": 0.0,
+  "done": true,
+  "issue": 1,
+  "title": "Create KanBan Board"
+ },
+ "PVTI_lAHOAjkDXc4BkdSgzg9uGyM": {
+  "c": 0.0,
+  "done": true,
+  "issue": 25,
+  "title": "Implement features and automations to kanban project"
+ },
+ "PVTI_lAHOAjkDXc4BkdSgzg8Y4iE": {
+  "c": 0.0,
+  "done": false,
+  "issue": 3,
+  "title": "How does it work Pipeline"
+ },
+ "PVTI_lAHOAjkDXc4BkdSgzg9uI_Q": {
+  "c": 0.0,
+  "done": true,
+  "issue": 27,
+  "title": "Point 1 of 7"
+ },
+ "PVTI_lAHOAjkDXc4BkdSgzg9uJKc": {
+  "c": 0.0,
+  "done": true,
+  "issue": 28,
+  "title": "Point 4 and 5"
+ },
+ "PVTI_lAHOAjkDXc4BkdSgzg9uJvc": {
+  "c": 0.0,
+  "done": true,
+  "issue": 29,
+  "title": "Point 2 of 7"
+ },
+ "PVTI_lAHOAjkDXc4BkdSgzg9uLJU": {
+  "c": 0.0,
+  "done": false,
+  "issue": 30,
+  "title": "Point 3 and 6"
+ }
+}

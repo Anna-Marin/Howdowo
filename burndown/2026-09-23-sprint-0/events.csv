@@ -1,0 +1,16 @@
+timestamp,issue,title,type,delta_hours
+2026-09-23T00:00:00+00:00,35,Create base project on Android Studio,inicial,2.0
+2026-10-05T07:37:34+00:00,35,Create base project on Android Studio,completado,-2.0
+2026-09-23T00:00:00+00:00,26,Point 7 of the document,inicial,4.0
+2026-10-05T07:57:21+00:00,26,Point 7 of the document,completado,-4.0
+2026-09-23T00:00:00+00:00,31,Search technologies to use,inicial,6.0
+2026-09-23T00:00:00+00:00,34,Create a presentation,inicial,5.0
+2026-09-23T00:00:00+00:00,9,Create Project Documentation - Sprint 0,inicial,8.0
+2026-09-23T00:00:00+00:00,2,Create a Burndown Burnup and velocity Chart ,inicial,2.0
+2026-10-05T08:50:43+00:00,2,Create a Burndown Burnup and velocity Chart ,completado,-2.0
+2026-09-23T00:00:00+00:00,25,Implement features and automations to kanban project,inicial,1.0
+2026-09-30T17:15:05+00:00,25,Implement features and automations to kanban project,completado,-1.0
+2026-09-23T00:00:00+00:00,27,Point 1 of 7,inicial,5.0
+2026-10-04T15:04:41+00:00,27,Point 1 of 7,completado,-5.0
+2026-09-23T00:00:00+00:00,29,Point 2 of 7,inicial,5.0
+2026-10-04T15:04:52+00:00,29,Point 2 of 7,completado,-5.0
