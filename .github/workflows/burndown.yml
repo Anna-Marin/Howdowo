@@ -1,0 +1,238 @@
+name: Burndown
+on:
+  schedule:
+    - cron: "0 * * * *"    # cada hora
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: burndown
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.PROJECT_TOKEN }}
+      OWNER: Anna-Marin
+      PROJECT_NUMBER: 1
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Calcular burndown
+        run: |
+          mkdir -p burndown
+          python3 - <<'EOF'
+          import json, csv, os, re, sys, math, subprocess, datetime as dt
+          from xml.sax.saxutils import escape
+
+          UTC = dt.timezone.utc
+          OWNER = os.environ['OWNER']
+          NUM = os.environ['PROJECT_NUMBER']
+          now = dt.datetime.now(UTC).replace(microsecond=0)
+          today = now.date()
+
+          QUERY = """
+          query($owner:String!, $num:Int!, $cursor:String) {
+            user(login:$owner) { projectV2(number:$num) {
+              items(first:100, after:$cursor) {
+                pageInfo { hasNextPage endCursor }
+                nodes {
+                  id
+                  content {
+                    ... on Issue { number title }
+                    ... on PullRequest { number title }
+                    ... on DraftIssue { title }
+                  }
+                  fieldValues(first:30) { nodes {
+                    ... on ProjectV2ItemFieldNumberValue { number updatedAt field { ... on ProjectV2FieldCommon { name } } }
+                    ... on ProjectV2ItemFieldTextValue { text updatedAt field { ... on ProjectV2FieldCommon { name } } }
+                    ... on ProjectV2ItemFieldSingleSelectValue { name updatedAt field { ... on ProjectV2FieldCommon { name } } }
+                    ... on ProjectV2ItemFieldIterationValue { title startDate duration updatedAt field { ... on ProjectV2FieldCommon { name } } }
+                  } }
+                }
+              }
+            } }
+          }
+          """
+
+          def ts(s):
+              return dt.datetime.fromisoformat(s.replace('Z', '+00:00')) if s else None
+
+          def fetch():
+              items, cursor = [], None
+              while True:
+                  cmd = ['gh', 'api', 'graphql', '-f', 'query=' + QUERY,
+                         '-f', 'owner=' + OWNER, '-F', 'num=' + NUM]
+                  if cursor:
+                      cmd += ['-f', 'cursor=' + cursor]
+                  res = subprocess.run(cmd, capture_output=True, text=True)
+                  if res.returncode:
+                      print(res.stderr); print(res.stdout); sys.exit(1)
+                  page = json.loads(res.stdout)['data']['user']['projectV2']['items']
+                  items += page['nodes']
+                  if not page['pageInfo']['hasNextPage']:
+                      break
+                  cursor = page['pageInfo']['endCursor']
+              return items
+
+          def norm(n):
+              f = {}
+              for v in n['fieldValues']['nodes']:
+                  if v and v.get('field'):
+                      f[v['field']['name']] = v
+              c = n.get('content') or {}
+              h = f.get('Time estimated') or {}
+              try:
+                  if h.get('number') is not None:
+                      hours = float(h['number'])
+                  else:
+                      hours = float(str(h.get('text') or '0').replace(',', '.'))
+              except ValueError:
+                  hours = 0.0
+              s = f.get('Sprint') or {}
+              st = f.get('Status') or {}
+              return dict(
+                  id=n['id'], issue=c.get('number', ''), title=c.get('title', ''),
+                  hours=hours, done=(st.get('name') == 'Done'),
+                  sprint=s if s.get('startDate') else None,
+                  t_sprint=ts(s.get('updatedAt')), t_hours=ts(h.get('updatedAt')),
+                  t_status=ts(st.get('updatedAt')))
+
+          all_items = [norm(n) for n in fetch()]
+          if not all_items:
+              print('El Project no devolvio items'); sys.exit(1)
+
+          # Sprint actual
+          cur, sprint = [], None
+          for it in all_items:
+              s = it['sprint']
+              if not s:
+                  continue
+              sd = dt.date.fromisoformat(s['startDate'])
+              ed = sd + dt.timedelta(days=s['duration'])
+              if sd <= today < ed:
+                  cur.append(it)
+                  sprint = (s['title'], sd, ed)
+          if not cur:
+              print('No hay sprint activo'); sys.exit(0)
+
+          title, sd, ed = sprint
+          start = dt.datetime.combine(sd, dt.time.min, tzinfo=UTC)
+          end = dt.datetime.combine(ed, dt.time.min, tzinfo=UTC)
+          slug = re.sub(r'[^a-z0-9]+', '-', title.lower()).strip('-') or 'sprint'
+          d = 'burndown/' + str(sd) + '-' + slug
+          os.makedirs(d, exist_ok=True)
+          epath, spath = d + '/events.csv', d + '/state.json'
+
+          def clamp(t):
+              t = t or now
+              return max(start, min(t, now))
+
+          new = []
+          def add(t, it, typ, delta):
+              if delta:
+                  new.append((clamp(t).isoformat(), it['issue'], it['title'], typ, delta))
+
+          first = not os.path.exists(spath)
+          state = {} if first else json.load(open(spath))
+          state_new, seen = {}, set()
+
+          for it in cur:
+              seen.add(it['id'])
+              c = 0.0 if it['done'] else it['hours']
+              old = state.get(it['id'])
+              if first:
+                  # Primera ejecucion: todo lo que hay cuenta como alcance inicial
+                  add(start, it, 'inicial', it['hours'])
+                  if it['done']:
+                      add(it['t_status'], it, 'completado', -it['hours'])
+              elif old is None:
+                  times = [t for t in (it['t_sprint'], it['t_hours']) if t]
+                  add(max(times) if times else now, it, 'anadido', it['hours'])
+                  if it['done']:
+                      add(it['t_status'], it, 'completado', -it['hours'])
+              elif c != old['c']:
+                  if it['done'] != old['done']:
+                      add(it['t_status'], it, 'completado' if it['done'] else 'reabierto', c - old['c'])
+                  else:
+                      add(it['t_hours'], it, 'estimacion', c - old['c'])
+              state_new[it['id']] = dict(c=c, done=it['done'], issue=it['issue'], title=it['title'])
+
+          for k, o in state.items():
+              if k not in seen and o['c']:
+                  new.append((now.isoformat(), o['issue'], o['title'], 'retirado', -o['c']))
+
+          if new:
+              exists = os.path.exists(epath)
+              with open(epath, 'a', newline='') as f:
+                  w = csv.writer(f)
+                  if not exists:
+                      w.writerow(['timestamp', 'issue', 'title', 'type', 'delta_hours'])
+                  w.writerows(new)
+          json.dump(state_new, open(spath, 'w'), indent=1)
+          changed = bool(new) or first
+
+          # ---- Dibujar ----
+          evs = []
+          if os.path.exists(epath):
+              for r in list(csv.reader(open(epath)))[1:]:
+                  evs.append((ts(r[0]), r[1], r[2], r[3], float(r[4])))
+          evs.sort(key=lambda e: e[0])
+
+          v = sum(e[4] for e in evs if e[0] <= start)
+          v0 = v
+          pts = [(start, v)]
+          marks = []
+          for e in evs:
+              if e[0] <= start:
+                  continue
+              pts.append((e[0], v))
+              v += e[4]
+              pts.append((e[0], v))
+              marks.append((e[0], v, e))
+          pts.append((min(now, end), v))
+
+          ymax = max([p[1] for p in pts] + [v0, 1])
+          ymax = math.ceil(ymax * 1.1)
+          W, H, L, B, T, R = 900, 460, 60, 60, 70, 30
+
+          def X(t): return L + (t - start) / (end - start) * (W - L - R)
+          def Y(x): return T + (1 - x / ymax) * (H - T - B)
+
+          o = []
+          o.append('<svg xmlns="http://www.w3.org/2000/svg" width="%d" height="%d" font-family="sans-serif" font-size="12">' % (W, H))
+          o.append('<!-- generated:%s -->' % today)
+          o.append('<rect width="100%" height="100%" fill="white"/>')
+          o.append('<text x="%d" y="26" font-size="17" font-weight="bold">Burndown - %s</text>' % (L, escape(title)))
+          o.append('<text x="%d" y="46" fill="#555">Pendiente ahora: %g h  |  Alcance inicial: %g h</text>' % (L, v, v0))
+          # ejes y cuadricula
+          for i in range(6):
+              val = ymax * i / 5
+              y = Y(val)
+              o.append('<line x1="%d" y1="%.1f" x2="%d" y2="%.1f" stroke="#eee"/>' % (L, y, W - R, y))
+              o.append('<text x="%d" y="%.1f" text-anchor="end">%g h</text>' % (L - 8, y + 4, round(val, 1)))
+          n_days = (end - start).days
+          step = max(1, n_days // 10)
+          for i in range(0, n_days + 1, step):
+              t = start + dt.timedelta(days=i)
+              x = X(t)
+              o.append('<line x1="%.1f" y1="%d" x2="%.1f" y2="%d" stroke="#f3f3f3"/>' % (x, T, x, H - B))
+              o.append('<text x="%.1f" y="%d" text-anchor="middle">%s</text>' % (x, H - B + 18, t.strftime('%d/%m')))
+          o.append('<line x1="%d" y1="%d" x2="%d" y2="%d" stroke="#888"/>' % (L, H - B, W - R, H - B))
+          o.append('<line x1="%d" y1="%d" x2="%d" y2="%d" stroke="#888"/>' % (L, T, L, H - B))
+          # linea de "ahora"
+          if start < now < end:
+              o.append('<line x1="%.1f" y1="%d" x2="%.1f" y2="%d" stroke="#bbb" stroke-dasharray="2 3"/>' % (X(now), T, X(now), H - B))
+          # ideal
+          o.append('<polyline points="%.1f,%.1f %.1f,%.1f" fill="none" stroke="#999" stroke-dasharray="6 4" stroke-width="2"/>' % (X(start), Y(v0), X(end), Y(0)))
+          # real (escalera)
+          real = ' '.join('%.1f,%.1f' % (X(t), Y(val)) for t, val in pts)
+          o.append('<polyline points="%s" fill="none" stroke="#2da44e" stroke-width="3"/>' % real)
+          # marcas de cada evento
+          for t, val, e in marks:
+              color = '#d1242f' if e[4] > 0 else '#2da44e'
+              tip = '%s | #%s %s | %s %+g h' % (t.strftime('%d/%m %H:%M'), e[1], e[2], e[3], e[4])
+              o.append('<circle cx="%.1f" cy="%.1f" r="5" fill="%s"><title>%s</title></circle>' % (X(t), Y(val), color, escape(tip)))
