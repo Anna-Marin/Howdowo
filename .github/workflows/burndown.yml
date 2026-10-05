@@ -236,3 +236,36 @@ jobs:
               color = '#d1242f' if e[4] > 0 else '#2da44e'
               tip = '%s | #%s %s | %s %+g h' % (t.strftime('%d/%m %H:%M'), e[1], e[2], e[3], e[4])
               o.append('<circle cx="%.1f" cy="%.1f" r="5" fill="%s"><title>%s</title></circle>' % (X(t), Y(val), color, escape(tip)))
+          o.append('<circle cx="%.1f" cy="%.1f" r="5" fill="#2da44e"/>' % (X(start), Y(v0)))
+          # leyenda
+          lx = W - 330
+          o.append('<text x="%d" y="26" fill="#999">--- Ideal</text>' % lx)
+          o.append('<text x="%d" y="26" fill="#2da44e">— Real</text>' % (lx + 70))
+          o.append('<text x="%d" y="26" fill="#d1242f">● Sube alcance</text>' % (lx + 130))
+          o.append('<text x="%d" y="46" fill="#2da44e">● Completado</text>' % (lx + 130))
+          o.append('</svg>')
+          svg = '\n'.join(o)
+
+          latest = 'burndown/burndown.svg'
+          marker = '<!-- generated:%s -->' % today
+          need = changed or not os.path.exists(latest) or marker not in open(latest).read()
+          if need:
+              open(latest, 'w').write(svg)
+              open(d + '/burndown.svg', 'w').write(svg)
+          EOF
+
+      - name: Guardar cambios
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add burndown
+          git diff --cached --quiet && exit 0
+          git commit -m "Burndown $(date -u +%F' '%H:%M)"
+          for i in 1 2 3; do
+            if git pull --rebase -X theirs origin main && git push; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep 5
+          done
+          exit 1
