@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ secrets.PROJECT_TOKEN }}
-      OWNER: oRioL-04      # <- cambia
+      OWNER: Anna-Marin      # <- cambia
       PROJECT_NUMBER: 1            # <- cambia
     steps:
       - uses: actions/checkout@v4
