@@ -2,7 +2,7 @@
 <!-- generated:2026-10-05 -->
 <rect width="100%" height="100%" fill="white"/>
 <text x="60" y="26" font-size="17" font-weight="bold">Burndown - Sprint 0</text>
-<text x="60" y="46" fill="#555">Pendiente ahora: 19 h  |  Alcance inicial: 38 h</text>
+<text x="60" y="46" fill="#555">Pendiente ahora: 0 h  |  Alcance inicial: 38 h</text>
 <line x1="60" y1="400.0" x2="870" y2="400.0" stroke="#eee"/>
 <text x="52" y="404.0" text-anchor="end">0 h</text>
 <line x1="60" y1="334.0" x2="870" y2="334.0" stroke="#eee"/>
@@ -45,15 +45,18 @@
 <text x="870.0" y="418" text-anchor="middle">06/10</text>
 <line x1="60" y1="400" x2="870" y2="400" stroke="#888"/>
 <line x1="60" y1="70" x2="60" y2="400" stroke="#888"/>
-<line x1="831.4" y1="70" x2="831.4" y2="400" stroke="#bbb" stroke-dasharray="2 3"/>
+<line x1="846.6" y1="70" x2="846.6" y2="400" stroke="#bbb" stroke-dasharray="2 3"/>
 <polyline points="60.0,101.4 870.0,400.0" fill="none" stroke="#999" stroke-dasharray="6 4" stroke-width="2"/>
-<polyline points="60.0,101.4 540.9,101.4 540.9,109.3 784.5,109.3 784.5,148.6 784.5,148.6 784.5,187.9 827.5,187.9 827.5,203.6 828.3,203.6 828.3,235.0 830.7,235.0 830.7,250.7 831.4,250.7" fill="none" stroke="#2da44e" stroke-width="3"/>
+<polyline points="60.0,101.4 540.9,101.4 540.9,109.3 784.5,109.3 784.5,148.6 784.5,148.6 784.5,187.9 827.5,187.9 827.5,203.6 828.3,203.6 828.3,235.0 830.7,235.0 830.7,250.7 846.3,250.7 846.3,290.0 846.3,290.0 846.3,337.1 846.5,337.1 846.5,400.0 846.6,400.0" fill="none" stroke="#2da44e" stroke-width="3"/>
 <circle cx="540.9" cy="109.3" r="5" fill="#2da44e"><title>30/09 17:15 | #25 Implement features and automations to kanban project | completado -1 h</title></circle>
 <circle cx="784.5" cy="148.6" r="5" fill="#2da44e"><title>04/10 15:04 | #27 Point 1 of 7 | completado -5 h</title></circle>
 <circle cx="784.5" cy="187.9" r="5" fill="#2da44e"><title>04/10 15:04 | #29 Point 2 of 7 | completado -5 h</title></circle>
 <circle cx="827.5" cy="203.6" r="5" fill="#2da44e"><title>05/10 07:37 | #35 Create base project on Android Studio | completado -2 h</title></circle>
 <circle cx="828.3" cy="235.0" r="5" fill="#2da44e"><title>05/10 07:57 | #26 Point 7 of the document | completado -4 h</title></circle>
 <circle cx="830.7" cy="250.7" r="5" fill="#2da44e"><title>05/10 08:50 | #2 Create a Burndown Burnup and velocity Chart  | completado -2 h</title></circle>
+<circle cx="846.3" cy="290.0" r="5" fill="#2da44e"><title>05/10 14:51 | #34 Create a presentation | completado -5 h</title></circle>
+<circle cx="846.3" cy="337.1" r="5" fill="#2da44e"><title>05/10 14:52 | #31 Search technologies to use | completado -6 h</title></circle>
+<circle cx="846.5" cy="400.0" r="5" fill="#2da44e"><title>05/10 14:56 | #9 Create Project Documentation - Sprint 0 | completado -8 h</title></circle>
 <circle cx="60.0" cy="101.4" r="5" fill="#2da44e"/>
 <text x="570" y="26" fill="#999">--- Ideal</text>
 <text x="640" y="26" fill="#2da44e">— Real</text>

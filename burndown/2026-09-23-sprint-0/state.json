@@ -18,20 +18,20 @@
   "title": "Point 7 of the document"
  },
  "PVTI_lAHOAjkDXc4BkdSgzg9uNDE": {
-  "c": 6.0,
-  "done": false,
+  "c": 0.0,
+  "done": true,
   "issue": 31,
   "title": "Search technologies to use"
  },
  "PVTI_lAHOAjkDXc4BkdSgzg9u3Hg": {
-  "c": 5.0,
-  "done": false,
+  "c": 0.0,
+  "done": true,
   "issue": 34,
   "title": "Create a presentation"
  },
  "PVTI_lAHOAjkDXc4BkdSgzg9tji4": {
-  "c": 8.0,
-  "done": false,
+  "c": 0.0,
+  "done": true,
   "issue": 9,
   "title": "Create Project Documentation - Sprint 0"
  },
@@ -53,12 +53,6 @@
   "issue": 25,
   "title": "Implement features and automations to kanban project"
  },
- "PVTI_lAHOAjkDXc4BkdSgzg8Y4iE": {
-  "c": 0.0,
-  "done": false,
-  "issue": 3,
-  "title": "How does it work Pipeline"
- },
  "PVTI_lAHOAjkDXc4BkdSgzg9uI_Q": {
   "c": 0.0,
   "done": true,
@@ -79,7 +73,7 @@
  },
  "PVTI_lAHOAjkDXc4BkdSgzg9uLJU": {
   "c": 0.0,
-  "done": false,
+  "done": true,
   "issue": 30,
   "title": "Point 3 and 6"
  }
