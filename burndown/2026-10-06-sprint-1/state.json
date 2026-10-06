@@ -1,0 +1,44 @@
+{
+ "PVTI_lAHOAjkDXc4BkdSgzg8Y444": {
+  "c": 0.0,
+  "done": false,
+  "issue": 4,
+  "title": "Appliance Identification"
+ },
+ "PVTI_lAHOAjkDXc4BkdSgzg9tjiw": {
+  "c": 0.0,
+  "done": false,
+  "issue": 5,
+  "title": "Manual retrieval"
+ },
+ "PVTI_lAHOAjkDXc4BkdSgzg9tjjA": {
+  "c": 0.0,
+  "done": false,
+  "issue": 10,
+  "title": "Image Overlay Guide generation"
+ },
+ "PVTI_lAHOAjkDXc4BkdSgzg9tjjI": {
+  "c": 0.0,
+  "done": false,
+  "issue": 11,
+  "title": "Favourites section"
+ },
+ "PVTI_lAHOAjkDXc4BkdSgzg9tjjg": {
+  "c": 0.0,
+  "done": false,
+  "issue": 12,
+  "title": "Create Project Documentation - Sprint 1"
+ },
+ "PVTI_lAHOAjkDXc4BkdSgzg9tjkY": {
+  "c": 0.0,
+  "done": false,
+  "issue": 15,
+  "title": "Implement guide rating"
+ },
+ "PVTI_lAHOAjkDXc4BkdSgzg9tjkg": {
+  "c": 0.0,
+  "done": false,
+  "issue": 16,
+  "title": "Off-peak electricity tips"
+ }
+}
