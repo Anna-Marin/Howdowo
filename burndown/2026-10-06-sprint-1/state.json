@@ -1,27 +1,27 @@
 {
- "PVTI_lADOFCkyKM4Bl88jzg-8Dk0": {
-  "c": 1.0,
-  "done": false,
-  "issue": 47,
-  "title": "CI with GitHub Actions"
- },
  "PVTI_lADOFCkyKM4Bl88jzg-8CqM": {
   "c": 0.0,
   "done": false,
   "issue": 45,
   "title": "Setup and proxy"
  },
- "PVTI_lADOFCkyKM4Bl88jzg-8Gzg": {
-  "c": 12.0,
-  "done": false,
-  "issue": 51,
-  "title": "Auth and profile"
+ "PVTI_lADOFCkyKM4Bl88jzg-8Dk0": {
+  "c": 0.0,
+  "done": true,
+  "issue": 47,
+  "title": "CI with GitHub Actions"
  },
  "PVTI_lADOFCkyKM4Bl88jzg-7rMI": {
   "c": 20.0,
   "done": false,
   "issue": 4,
   "title": "Appliance Identification"
+ },
+ "PVTI_lADOFCkyKM4Bl88jzg-8Gzg": {
+  "c": 12.0,
+  "done": false,
+  "issue": 51,
+  "title": "Auth and profile"
  },
  "PVTI_lADOFCkyKM4Bl88jzg-77-4": {
   "c": 5.0,
@@ -132,7 +132,7 @@
   "title": "Create Project Documentation - Sprint 1"
  },
  "PVTI_lADOFCkyKM4Bl88jzg-79JQ": {
-  "c": 0.0,
+  "c": 8.0,
   "done": false,
   "issue": 40,
   "title": "Reinforcement AI learning"
@@ -162,7 +162,7 @@
   "title": "Button and dial detection"
  },
  "PVTI_lADOFCkyKM4Bl88jzg-8LkU": {
-  "c": 0.0,
+  "c": 8.0,
   "done": false,
   "issue": 63,
   "title": "Chat and Q&A"
@@ -196,5 +196,11 @@
   "done": false,
   "issue": 59,
   "title": "Control panel cropping"
+ },
+ "PVTI_lADOFCkyKM4Bl88jzg_M0PY": {
+  "c": 4.0,
+  "done": false,
+  "issue": 71,
+  "title": "Plan Sprint 2"
  }
 }

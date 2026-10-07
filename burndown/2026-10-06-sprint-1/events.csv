@@ -24,3 +24,7 @@ timestamp,issue,title,type,delta_hours
 2026-10-06T17:07:08+00:00,67,LangChain agent wiring,anadido,2.0
 2026-10-06T17:04:29+00:00,62,Compose Canvas overlay,anadido,5.0
 2026-10-06T17:03:31+00:00,59,Control panel cropping,anadido,3.0
+2026-10-07T16:28:45+00:00,47,CI with GitHub Actions,completado,-1.0
+2026-10-07T17:50:25+00:00,40,Reinforcement AI learning,estimacion,8.0
+2026-10-07T17:50:42+00:00,63,Chat and Q&A,estimacion,8.0
+2026-10-07T17:25:37+00:00,71,Plan Sprint 2,anadido,4.0
