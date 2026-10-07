@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ secrets.PROJECT_TOKEN }}
-      OWNER: Anna-Marin
+      OWNER: HoDoWo
       PROJECT_NUMBER: 1
     steps:
       - uses: actions/checkout@v4
