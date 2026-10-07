@@ -23,6 +23,12 @@
   "issue": 4,
   "title": "Appliance Identification"
  },
+ "PVTI_lADOFCkyKM4Bl88jzg-77-4": {
+  "c": 5.0,
+  "done": false,
+  "issue": 38,
+  "title": "Camera capture with CameraX"
+ },
  "PVTI_lADOFCkyKM4Bl88jzg-7rMY": {
   "c": 7.0,
   "done": false,
@@ -94,12 +100,6 @@
   "done": false,
   "issue": 15,
   "title": "Implement guide rating"
- },
- "PVTI_lADOFCkyKM4Bl88jzg-77-4": {
-  "c": 5.0,
-  "done": false,
-  "issue": 38,
-  "title": "Camera capture with CameraX"
  },
  "PVTI_lADOFCkyKM4Bl88jzg-78vE": {
   "c": 3.0,
