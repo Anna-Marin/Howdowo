@@ -2,19 +2,19 @@
 <!-- generated:2026-10-07 -->
 <rect width="100%" height="100%" fill="white"/>
 <text x="60" y="26" font-size="17" font-weight="bold">Burndown - Sprint 1</text>
-<text x="60" y="46" fill="#555">Pendiente ahora: 0 h  |  Alcance inicial: 0 h</text>
+<text x="60" y="46" fill="#555">Pendiente ahora: 120 h  |  Alcance inicial: 0 h</text>
 <line x1="60" y1="400.0" x2="870" y2="400.0" stroke="#eee"/>
 <text x="52" y="404.0" text-anchor="end">0 h</text>
 <line x1="60" y1="334.0" x2="870" y2="334.0" stroke="#eee"/>
-<text x="52" y="338.0" text-anchor="end">0.4 h</text>
+<text x="52" y="338.0" text-anchor="end">26.4 h</text>
 <line x1="60" y1="268.0" x2="870" y2="268.0" stroke="#eee"/>
-<text x="52" y="272.0" text-anchor="end">0.8 h</text>
+<text x="52" y="272.0" text-anchor="end">52.8 h</text>
 <line x1="60" y1="202.0" x2="870" y2="202.0" stroke="#eee"/>
-<text x="52" y="206.0" text-anchor="end">1.2 h</text>
+<text x="52" y="206.0" text-anchor="end">79.2 h</text>
 <line x1="60" y1="136.0" x2="870" y2="136.0" stroke="#eee"/>
-<text x="52" y="140.0" text-anchor="end">1.6 h</text>
+<text x="52" y="140.0" text-anchor="end">105.6 h</text>
 <line x1="60" y1="70.0" x2="870" y2="70.0" stroke="#eee"/>
-<text x="52" y="74.0" text-anchor="end">2 h</text>
+<text x="52" y="74.0" text-anchor="end">132 h</text>
 <line x1="60.0" y1="70" x2="60.0" y2="400" stroke="#f3f3f3"/>
 <text x="60.0" y="418" text-anchor="middle">06/10</text>
 <line x1="130.4" y1="70" x2="130.4" y2="400" stroke="#f3f3f3"/>
@@ -41,9 +41,34 @@
 <text x="834.8" y="418" text-anchor="middle">28/10</text>
 <line x1="60" y1="400" x2="870" y2="400" stroke="#888"/>
 <line x1="60" y1="70" x2="60" y2="400" stroke="#888"/>
-<line x1="95.9" y1="70" x2="95.9" y2="400" stroke="#bbb" stroke-dasharray="2 3"/>
+<line x1="104.5" y1="70" x2="104.5" y2="400" stroke="#bbb" stroke-dasharray="2 3"/>
 <polyline points="60.0,400.0 870.0,400.0" fill="none" stroke="#999" stroke-dasharray="6 4" stroke-width="2"/>
-<polyline points="60.0,400.0 95.9,400.0" fill="none" stroke="#2da44e" stroke-width="3"/>
+<polyline points="60.0,400.0 84.6,400.0 84.6,390.0 84.6,390.0 84.6,340.0 84.6,340.0 84.6,332.5 84.7,332.5 84.7,320.0 84.7,320.0 84.7,300.0 84.7,300.0 84.7,290.0 84.7,290.0 84.7,272.5 84.7,272.5 84.7,267.5 84.7,267.5 84.7,265.0 84.8,265.0 84.8,262.5 84.8,262.5 84.8,260.0 84.9,260.0 84.9,250.0 84.9,250.0 84.9,247.5 84.9,247.5 84.9,217.5 85.0,217.5 85.0,212.5 85.0,212.5 85.0,205.0 85.0,205.0 85.0,200.0 85.0,200.0 85.0,195.0 85.0,195.0 85.0,165.0 85.0,165.0 85.0,157.5 85.0,157.5 85.0,147.5 85.1,147.5 85.1,135.0 85.1,135.0 85.1,120.0 85.1,120.0 85.1,105.0 85.1,105.0 85.1,100.0 104.5,100.0" fill="none" stroke="#2da44e" stroke-width="3"/>
+<circle cx="84.6" cy="390.0" r="5" fill="#d1242f"><title>06/10 16:45 | #15 Implement guide rating | anadido +4 h</title></circle>
+<circle cx="84.6" cy="340.0" r="5" fill="#d1242f"><title>06/10 16:46 | #4 Appliance Identification | anadido +20 h</title></circle>
+<circle cx="84.6" cy="332.5" r="5" fill="#d1242f"><title>06/10 16:47 | #39 Upload image to Firebase Storage | anadido +3 h</title></circle>
+<circle cx="84.7" cy="320.0" r="5" fill="#d1242f"><title>06/10 16:48 | #38 Camera capture with CameraX | anadido +5 h</title></circle>
+<circle cx="84.7" cy="300.0" r="5" fill="#d1242f"><title>06/10 16:48 | #41 Vision LLM pipeline: detect brand, category and model | anadido +8 h</title></circle>
+<circle cx="84.7" cy="290.0" r="5" fill="#d1242f"><title>06/10 16:48 | #42 Identification result card with confirmation and manual selection | anadido +4 h</title></circle>
+<circle cx="84.7" cy="272.5" r="5" fill="#d1242f"><title>06/10 16:49 | #5 Manual retrieval | anadido +7 h</title></circle>
+<circle cx="84.7" cy="267.5" r="5" fill="#d1242f"><title>06/10 16:51 | #12 Create Project Documentation - Sprint 1 | anadido +2 h</title></circle>
+<circle cx="84.7" cy="265.0" r="5" fill="#d1242f"><title>06/10 16:51 | #36 Set up SonarQube | anadido +1 h</title></circle>
+<circle cx="84.8" cy="262.5" r="5" fill="#d1242f"><title>06/10 16:55 | #46 Repo structure, README and branch protection | anadido +1 h</title></circle>
+<circle cx="84.8" cy="260.0" r="5" fill="#d1242f"><title>06/10 16:56 | #47 CI with GitHub Actions | anadido +1 h</title></circle>
+<circle cx="84.9" cy="250.0" r="5" fill="#d1242f"><title>06/10 16:57 | #48 FastAPI on Vercel: CORS, rate limiting, env keys | anadido +4 h</title></circle>
+<circle cx="84.9" cy="247.5" r="5" fill="#d1242f"><title>06/10 16:58 | #49 Walking skeleton: Android → FastAPI → LLM → response | anadido +1 h</title></circle>
+<circle cx="84.9" cy="217.5" r="5" fill="#d1242f"><title>06/10 16:59 | #51 Auth and profile | anadido +12 h</title></circle>
+<circle cx="85.0" cy="212.5" r="5" fill="#d1242f"><title>06/10 17:00 | #53 Firebase project + Auth SDK | anadido +2 h</title></circle>
+<circle cx="85.0" cy="205.0" r="5" fill="#d1242f"><title>06/10 17:00 | #54 Login, register and Google sign-in screens | anadido +3 h</title></circle>
+<circle cx="85.0" cy="200.0" r="5" fill="#d1242f"><title>06/10 17:01 | #55 JWT interceptor + token check in backend | anadido +2 h</title></circle>
+<circle cx="85.0" cy="195.0" r="5" fill="#d1242f"><title>06/10 17:01 | #56 Profile and saved appliances: Firestore schema + UI | anadido +2 h</title></circle>
+<circle cx="85.0" cy="165.0" r="5" fill="#d1242f"><title>06/10 17:03 | #58 Control Panel | anadido +12 h</title></circle>
+<circle cx="85.0" cy="157.5" r="5" fill="#d1242f"><title>06/10 17:03 | #59 Control panel cropping | anadido +3 h</title></circle>
+<circle cx="85.0" cy="147.5" r="5" fill="#d1242f"><title>06/10 17:04 | #61 Button and dial detection | anadido +4 h</title></circle>
+<circle cx="85.1" cy="135.0" r="5" fill="#d1242f"><title>06/10 17:04 | #62 Compose Canvas overlay | anadido +5 h</title></circle>
+<circle cx="85.1" cy="120.0" r="5" fill="#d1242f"><title>06/10 17:06 | #64 Chat UI (text and images) | anadido +6 h</title></circle>
+<circle cx="85.1" cy="105.0" r="5" fill="#d1242f"><title>06/10 17:06 | #66 Conversational route: history, context, streaming | anadido +6 h</title></circle>
+<circle cx="85.1" cy="100.0" r="5" fill="#d1242f"><title>06/10 17:07 | #67 LangChain agent wiring | anadido +2 h</title></circle>
 <circle cx="60.0" cy="400.0" r="5" fill="#2da44e"/>
 <text x="570" y="26" fill="#999">--- Ideal</text>
 <text x="640" y="26" fill="#2da44e">— Real</text>

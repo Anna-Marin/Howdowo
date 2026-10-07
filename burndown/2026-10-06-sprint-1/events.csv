@@ -1,0 +1,26 @@
+timestamp,issue,title,type,delta_hours
+2026-10-06T16:56:00+00:00,47,CI with GitHub Actions,anadido,1.0
+2026-10-06T16:59:59+00:00,51,Auth and profile,anadido,12.0
+2026-10-06T16:46:55+00:00,4,Appliance Identification,anadido,20.0
+2026-10-06T16:49:16+00:00,5,Manual retrieval,anadido,7.0
+2026-10-06T16:58:47+00:00,49,Walking skeleton: Android → FastAPI → LLM → response,anadido,1.0
+2026-10-06T16:57:14+00:00,48,"FastAPI on Vercel: CORS, rate limiting, env keys",anadido,4.0
+2026-10-06T16:55:30+00:00,46,"Repo structure, README and branch protection",anadido,1.0
+2026-10-06T16:51:40+00:00,36,Set up SonarQube,anadido,1.0
+2026-10-06T17:00:21+00:00,53,Firebase project + Auth SDK,anadido,2.0
+2026-10-06T17:01:23+00:00,55,JWT interceptor + token check in backend,anadido,2.0
+2026-10-06T17:00:48+00:00,54,"Login, register and Google sign-in screens",anadido,3.0
+2026-10-06T17:01:59+00:00,56,Profile and saved appliances: Firestore schema + UI,anadido,2.0
+2026-10-06T16:45:58+00:00,15,Implement guide rating,anadido,4.0
+2026-10-06T16:48:00+00:00,38,Camera capture with CameraX,anadido,5.0
+2026-10-06T16:47:51+00:00,39,Upload image to Firebase Storage,anadido,3.0
+2026-10-06T16:48:16+00:00,41,"Vision LLM pipeline: detect brand, category and model",anadido,8.0
+2026-10-06T16:48:36+00:00,42,Identification result card with confirmation and manual selection,anadido,4.0
+2026-10-06T16:51:27+00:00,12,Create Project Documentation - Sprint 1,anadido,2.0
+2026-10-06T17:06:16+00:00,64,Chat UI (text and images),anadido,6.0
+2026-10-06T17:03:01+00:00,58,Control Panel,anadido,12.0
+2026-10-06T17:04:02+00:00,61,Button and dial detection,anadido,4.0
+2026-10-06T17:06:43+00:00,66,"Conversational route: history, context, streaming",anadido,6.0
+2026-10-06T17:07:08+00:00,67,LangChain agent wiring,anadido,2.0
+2026-10-06T17:04:29+00:00,62,Compose Canvas overlay,anadido,5.0
+2026-10-06T17:03:31+00:00,59,Control panel cropping,anadido,3.0
