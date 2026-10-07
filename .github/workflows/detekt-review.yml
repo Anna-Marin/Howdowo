@@ -1,0 +1,30 @@
+name: Revisión de Kotlin (Detekt)
+
+on:
+  pull_request:
+    paths:
+      - '**.kt'
+      - '**.kts'
+
+jobs:
+  detekt-review:
+    name: Buscar código mal en Kotlin
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write # Necesario para dejar comentarios
+      contents: read
+    
+    steps:
+      - name: Clonar el código
+        uses: actions/checkout@v4
+        
+      - name: Revisar con Detekt y comentar en el PR
+        uses: reviewdog/action-detekt@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # 'github-pr-review' hace que comente directamente en las líneas del código modificado
+          reporter: github-pr-review
+          # Opcional: si quieres que el PR dé un error rojo y no deje mergear si hay código mal
+          fail_on_error: true 
+          # Nivel de los comentarios en GitHub
+          level: warning
